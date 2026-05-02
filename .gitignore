@@ -41,5 +41,12 @@ bin/
 ### VS Code ###
 .vscode/
 
+### Server Files ###
+/Server/files/
+
+
+
+
+
 ### Mac OS ###
 .DS_Store
