@@ -4,24 +4,24 @@
 ![UDP Protocol](https://img.shields.io/badge/UDP_Protocol-Red?style=for-the-badge&logo=databricks&logoColor=white)
 ![CLI & GUI](https://img.shields.io/badge/CLI_&_GUI-White?style=for-the-badge&logo=gnometerminal&logoColor=black)
 
-Um sistema Cliente-Servidor robusto para transferência de arquivos via rede local utilizando o protocolo **UDP**. Este projeto implementa envio em blocos (*chunking*), verificação de integridade de ponta a ponta e uma interface de linha de comando com feedback visual em tempo real.
+A robust Client-Server system for local network file transfers using the **UDP** protocol. This project implements block sending (*chunking*), end-to-end integrity verification, and a command-line interface with real-time visual feedback.
 
 ---
-Próximos passos:
-* Implementar verificação de ordem dos pacotes com fila de espera
+Next steps:
+* Implement packet order verification with a waiting queue
 ---
 
-## ✨ Funcionalidades
+## ✨ Features
 
-* **Transferência via UDP:** Comunicação rápida utilizando `DatagramSocket` e `DatagramPacket`.
-* **Integridade de Dados (SHA-1):** Como o UDP não garante a entrega perfeita, cada pacote de 1024 bytes carrega uma assinatura SHA-1 de 20 bytes. O servidor recalcula o hash na chegada e descarta pacotes corrompidos.
-* **Barra de Progresso Dinâmica:** Feedback visual no terminal (`|====>     | 50%`) calculado com base no tamanho do arquivo e na quantidade de pacotes enviados/recebidos.
-* **Seleção de Arquivos (GUI):** O cliente utiliza o `JFileChooser` do Java Swing com o tema nativo do sistema operacional para facilitar a escolha dos arquivos.
-* **Sistema de Logs:** O servidor registra eventos de início, sucesso e erro com timestamps usando `KotlinLogging`.
+* **UDP Transfer:** Fast communication using `DatagramSocket` and `DatagramPacket`.
+* **Data Integrity (SHA-1):** Since UDP does not guarantee perfect delivery, each 1024-byte packet carries a 20-byte SHA-1 signature. The server recalculates the hash upon arrival and discards corrupted packets.
+* **Dynamic Progress Bar:** Visual feedback in the terminal (`|====>     | 50%`) calculated based on the file size and the number of packets sent/received.
+* **File Selection (GUI):** The client uses Java Swing's `JFileChooser` with the operating system's native theme to facilitate file selection.
+* **Logging System:** The server records start, success, and error events with timestamps using `KotlinLogging`.
 
 ---
 
-## 📂 Estrutura
+## 📂 Structure
 
 ```text
 📦 kotlin-udp-file-transfer
@@ -29,7 +29,7 @@ Próximos passos:
  ┃ ┗ 📂 src/main/kotlin/bonfim/jordan
  ┃ ┃ ┗ 📜 Client.kt
  ┣ 📂 server
- ┃ ┣ 📂 files (Arquivos recebidos são salvos aqui)
+ ┃ ┣ 📂 files (Received files are saved here)
  ┃ ┗ 📂 src/main/kotlin/bonfim/jordan
  ┃ ┃ ┗ 📜 Server.kt
  ┗ 📜 README.md
